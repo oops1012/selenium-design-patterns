@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -17,7 +18,9 @@ public class BaseTest {
         System.out.println(
                 "*********************   Create WebDriver Instance - Do not forget system property   *******************"
         );
-        this.driver = new FirefoxDriver();
+        File IEDriver = new File("chromedriver.exe");
+        System.setProperty("webdriver.ie.driver", IEDriver.getAbsolutePath());
+        //this.driver = new FirefoxDriver();
     }
 
 
